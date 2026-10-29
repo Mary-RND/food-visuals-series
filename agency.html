@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Серия визуалов для доставки — 8 постов в едином стиле (без цен) · Марина Петрушина</title>
+<meta name="description" content="Кейс: серия из 8 визуалов 1080×1080 для сервиса доставки роллов и пиццы. Единая сетка, тёплая палитра, текст наложен отдельно от генерации.">
+<meta property="og:title" content="Серия визуалов для доставки — 8 постов в едином стиле">
+<meta property="og:description" content="Кейс на реальном заказе с FL.ru: 8 постов 1080×1080 в единой палитре.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F7ECE0">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F7ECE0;
+    --cream-2:#FFFBF6;
+    --tomato:#D63E2C;
+    --amber:#E8A33D;
+    --graphite:#2E2018;
+    --muted:#5C4636;
+    --line:rgba(46,32,24,.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:'Golos Text',system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--cream);
+    color:var(--graphite);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;height:auto}
+  a{color:inherit}
+  .wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+
+  header{padding:64px 0 40px;border-bottom:1px solid var(--line)}
+  .eyebrow{
+    display:inline-block;font-size:13px;font-weight:700;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--tomato);margin-bottom:18px;
+  }
+  h1{font-size:clamp(30px,5vw,54px);line-height:1.06;font-weight:900;letter-spacing:-.02em}
+  h1 em{font-style:normal;color:var(--tomato)}
+  .lead{margin-top:20px;max-width:74ch;font-size:clamp(16px,1.6vw,19px);color:var(--muted)}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+  .chip{
+    font-size:14px;font-weight:700;padding:9px 16px;border-radius:999px;
+    background:rgba(214,62,44,.1);color:var(--tomato);border:1px solid rgba(214,62,44,.28);
+  }
+  .chip.alt{background:rgba(232,163,61,.16);color:#8A5A17;border-color:rgba(232,163,61,.4)}
+  .chip.plain{background:transparent;color:var(--muted);border-color:var(--line)}
+
+  nav.back{margin-top:26px;font-weight:600;font-size:15px}
+  nav.back a{color:var(--tomato);text-decoration:none;border-bottom:1px solid rgba(214,62,44,.35)}
+  nav.back a:hover{border-bottom-color:var(--tomato)}
+
+  section{padding:52px 0}
+  h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;letter-spacing:-.01em;margin-bottom:8px}
+  .sec-note{color:var(--muted);max-width:74ch;margin-bottom:28px}
+
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  figure{background:var(--cream-2);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  figure img{width:100%;transition:transform .35s ease}
+  figure:hover img{transform:scale(1.03)}
+  figcaption{
+    display:flex;align-items:baseline;justify-content:space-between;gap:10px;
+    padding:12px 14px;font-size:14px;
+  }
+  figcaption b{font-weight:700}
+  figcaption span{color:var(--tomato);font-weight:800;font-variant-numeric:tabular-nums;font-size:13px}
+  .cap{color:var(--muted);font-size:13px;padding:0 14px 14px;margin-top:-6px}
+
+  .swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+  .sw{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--cream-2)}
+  .sw .c{height:86px}
+  .sw .t{padding:11px 13px;font-size:13px}
+  .sw .t b{display:block;font-weight:700}
+  .sw .t code{color:var(--muted);font-size:12px}
+
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .step{background:var(--cream-2);border:1px solid var(--line);border-radius:16px;padding:22px}
+  .step .n{
+    display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+    border-radius:10px;background:var(--tomato);color:#FFF6EC;font-weight:800;font-size:15px;
+    margin-bottom:14px;
+  }
+  .step h3{font-size:16px;font-weight:800;margin-bottom:6px}
+  .step p{font-size:14px;color:var(--muted)}
+
+  table{width:100%;border-collapse:collapse;background:var(--cream-2);
+        border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  th,td{padding:14px 18px;text-align:left;font-size:15px;border-bottom:1px solid var(--line)}
+  th{font-weight:700;background:rgba(46,32,24,.04);width:44%}
+  tr:last-child th,tr:last-child td{border-bottom:0}
+  td.num{font-weight:800;color:var(--tomato)}
+
+  .note{
+    background:rgba(214,62,44,.07);border:1px solid rgba(214,62,44,.22);
+    border-radius:16px;padding:22px 24px;font-size:15px;color:var(--muted);
+  }
+  .note b{color:var(--graphite)}
+
+  footer{border-top:1px solid var(--line);padding:34px 0 56px;
+         display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;
+         font-size:14px;color:var(--muted)}
+  footer a{color:var(--tomato);text-decoration:none;font-weight:600}
+
+  @media (max-width:980px){
+    .grid{grid-template-columns:repeat(2,1fr)}
+    .swatches{grid-template-columns:repeat(2,1fr)}
+    .steps{grid-template-columns:1fr}
+  }
+  @media (max-width:560px){
+    .grid{grid-template-columns:1fr}
+    .wrap{width:calc(100% - 28px)}
+    header{padding:44px 0 32px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <span class="eyebrow">Кейс · FGg02 · серия визуалов</span>
+    <h1>Серия визуалов для доставки:<br><em>8 постов в едином стиле</em></h1>
+    <p class="lead">
+      Кейс на основе реального заказа с FL.ru: сервису доставки роллов и пиццы нужны
+      карусели, посты и рекламные креативы в едином стиле бренда. Собрано 8 визуалов
+      1080×1080 — от обложки-обещания через продукт и комбо до финального CTA.
+      Один шаблон, одна палитра, общий футер с номером визуала.
+    </p>
+    <div class="meta">
+      <span class="chip">8 визуалов 1080×1080</span>
+      <span class="chip alt">3 ч 20 мин</span>
+      <span class="chip plain">Заказ: FL.ru</span>
+      
+    </div>
+    <p class="back"><a href="https://mary-rnd.github.io/portfolio/">← Все кейсы в портфолио</a></p>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <h2>Серия целиком</h2>
+      <p class="sec-note">Нажмите на карточку, чтобы открыть в размере 1080×1080.</p>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Палитра</h2>
+      <p class="sec-note">
+        Один тёплый набор на всю серию: кремовая подложка под текстом, томатный акцент,
+        янтарный для разделителя, графитовый текст. Плотность подложки снижена, чтобы фото
+        внизу оставалось видимым — контраст текста держится на 4.9–6.7:1 (норма WCAG AA — 4.5:1).
+      </p>
+      <div class="swatches">
+        <div class="sw"><div class="c" style="background:#F7ECE0"></div>
+          <div class="t"><b>Подложка</b><code>#F7ECE0</code></div></div>
+        <div class="sw"><div class="c" style="background:#D63E2C"></div>
+          <div class="t"><b>Акцент, CTA</b><code>#D63E2C</code></div></div>
+        <div class="sw"><div class="c" style="background:#E8A33D"></div>
+          <div class="t"><b>Вторичный</b><code>#E8A33D</code></div></div>
+        <div class="sw"><div class="c" style="background:#2E2018"></div>
+          <div class="t"><b>Текст</b><code>#2E2018</code></div></div>
+        <div class="sw"><div class="c" style="background:#5C4636"></div>
+          <div class="t"><b>Подзаголовок</b><code>#5C4636</code></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Как собиралось</h2>
+      <p class="sec-note">Полный цикл из задания: заказ → бриф → концепция → промпты → генерация → сборка → защита.</p>
+      <div class="steps">
+        <div class="step">
+          <span class="n">1</span>
+          <h3>Разбор заказа</h3>
+          <p>Вакансия с FL.ru: задача клиента, ЦА, форматы, сроки и список недостающих данных — что уточнять у заказчика.</p>
+        </div>
+        <div class="step">
+          <span class="n">2</span>
+          <h3>Бриф и концепция</h3>
+          <p>10 полей визуальной концепции: стиль, палитра, настроение, ключевые объекты, что использовать и чего избегать.</p>
+        </div>
+        <div class="step">
+          <span class="n">3</span>
+          <h3>Промпты</h3>
+          <p>Структура «объект → стиль → формат → детали», по одному промту на каждый из 8 кадров.</p>
+        </div>
+        <div class="step">
+          <span class="n">4</span>
+          <h3>Генерация фона</h3>
+          <p>Seedream 5.0 Pro, 1024×1024, без фирменной подмешки промта — иначе нейросеть уводит фото в чужую палитру.</p>
+        </div>
+        <div class="step">
+          <span class="n">5</span>
+          <h3>Сборка</h3>
+          <p>HTML/CSS-шаблон: текст, акценты, CTA, чип «01 / 08» и футер. Надписи добавлены отдельно от генерации.</p>
+        </div>
+        <div class="step">
+          <span class="n">6</span>
+          <h3>Защита макета</h3>
+          <p>Превью 720×720 с водяным знаком «на согласование» — клиенту уходит превью, исходники после оплаты.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2>Результат</h2>
+      <table>
+        <tr><th>Визуалов</th><td class="num">8 постов 1080×1080</td></tr>
+        <tr><th>Время работы</th><td class="num">3 ч 20 мин</td></tr>
+        
+        
+        <tr><th>Формат</th><td>1080×1080 + защищённые превью 720×720</td></tr>
+        <tr><th>Дополнительно</th><td>Пакет «Визуалы на неделю», расширение серии до 10 кадров</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="note">
+        <b>Важно.</b> Название бренда «ROLL &amp; PIZZA», цены и адрес — рабочие, вымышленные:
+        в заказе не было брендбука, логотипа и меню, поэтому в шаблоне стоит временный шильда,
+        а логотип не генерировался (генерация фирменных элементов клиента запрещена правилами задания).
+        Фотофон сгенерирован специально под палитру проекта и не имеет лицензионных ограничений.
+        Заказ разобран как реальный: FL.ru, вакансия «Требуется графический дизайнер», 10.10.2026.
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;width:min(1240px,100% - 40px)">
+    <span>Марина Петрушина · кейс «Серия визуалов для соцсетей»</span>
+    <span><a href="https://github.com/Mary-RND/food-visuals-series">Код и скриншоты на GitHub</a></span>
+  </div>
+</footer>
+
+<script>
+  var SHOTS = [
+    ["01-hero",         "Обложка",           "Роллы и пицца за 60 минут", "Обложка серии: набор роллов и сашими на светлом столе"],
+    ["02-philadelphia", "Продукт",            "Филадельфия с лососем",     "Крупный план роллов «Филадельфия» на белой тарелке"],
+    ["03-pepperoni",    "Хит",                "Пепперони из печи",         "Свежая пицца пепперони на светлом деревянном столе"],
+    ["04-combo",        "Комбо −20%",         "Комбо для двоих",           "Роллы, пицца и два лимонада на бежевом столе сверху"],
+    ["05-lunch",        "Обед в офис",        "За 30 минут",               "Бенто-бокс с роллами на рабочем столе рядом с ноутбуком"],
+    ["06-fresh",        "Свежесть",           "Катаем после заказа",       "Руки повара катают роллы на светлой доске"],
+    ["07-delivery",     "Доставка",           "За 60 минут",               "Курьер с бумажным пакетом у подъезда днём"],
+    ["08-cta",          "Финальный CTA",      "Вечер начинается с еды",    "Друзья чокаются за столом с роллами и пиццей"]
+  ];
+
+  var grid = document.getElementById("grid");
+  SHOTS.forEach(function (s, i) {
+    var n = String(i + 1).padStart(2, "0");
+    var fig = document.createElement("figure");
+    fig.innerHTML =
+      '<a href="screenshots/' + s[0] + '.webp" target="_blank" rel="noopener">' +
+      '<img src="screenshots/' + s[0] + '.webp" alt="' + s[4] + '" width="1080" height="1080" loading="' +
+      (i < 4 ? "eager" : "lazy") + '"></a>' +
+      '<figcaption><b>' + s[1] + ' · ' + s[2] + '</b><span>' + n + ' / 08</span></figcaption>';
+    grid.appendChild(fig);
+  });
+</script>
+</body>
+</html>
